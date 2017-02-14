@@ -49,7 +49,7 @@
 
 // 头文件
 #import "PininterestLikeMenu.h"
-
+#import "Masonry.h"
 
 //清除背景色
 #define CLEARCOLOR [UIColor clearColor]
@@ -58,10 +58,11 @@
 #define IMAGE(A) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:A ofType:nil]]
 
 //带有RGBA的颜色设置
-#define COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
-
+#define COLORWithAlpha(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+#define COLOR(R, G, B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1]
 //方正黑体简体字体定义
-#define FONT(F) [UIFont fontWithName:@"FZHTJW--GB1-0" size:F]
+//#define FONT(F) [UIFont fontWithName:@"FZHTJW--GB1-0" size:F]
+#define Font(x) [UIFont systemFontOfSize:x]
 
 //安全删除对象
 #define SAFE_DELETE(P) if(P) { [P release], P = nil; }
