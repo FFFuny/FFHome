@@ -50,6 +50,7 @@
 // 头文件
 #import "PininterestLikeMenu.h"
 #import "Masonry.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 //清除背景色
 #define CLEARCOLOR [UIColor clearColor]

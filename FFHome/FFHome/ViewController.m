@@ -27,17 +27,63 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    home = [[HomeViewController alloc] init];
-    [self.view addSubview:home.view];
+    BOOL isFinger = [[NSUserDefaults standardUserDefaults] boolForKey:@"isFinger"];
+    if (isFinger) {
+        
+        LAContext *ctx = [[LAContext alloc] init];
+        if ([ctx canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:NULL]) {
+            
+            // 识别代码部分
+            [ctx evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"通过Home键验证已有手机指纹" reply:^(BOOL success, NSError * _Nullable error) {
+                
+                if (success) {
+                    
+                    NSLog(@"成功");
+                    home = [[HomeViewController alloc] init];
+                    [self.view addSubview:home.view];
+                    
+                    mine = [[MineViewController alloc] init];
+                    [self.view addSubview:mine.view];
+                    
+                    [self.view bringSubviewToFront:home.view];
+                    
+                    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(popPininterestMenu:)];
+                    gesture.delegate = self;
+                    [self.view addGestureRecognizer:gesture];
+
+                } else {
+                    
+                    NSLog(@"取消");
+                    if (error.code == LAErrorUserFallback) {
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            // 密码验证
+                        });
+                    } else if (error.code == LAErrorUserCancel) {
+                        
+                        NSLog(@"取消2");
+                        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFinger"];
+                    }
+                }
+            }];
+        }
+    } else {
+        
+        home = [[HomeViewController alloc] init];
+        [self.view addSubview:home.view];
+        
+        mine = [[MineViewController alloc] init];
+        [self.view addSubview:mine.view];
+        
+        [self.view bringSubviewToFront:home.view];
+        
+        UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(popPininterestMenu:)];
+        gesture.delegate = self;
+        [self.view addGestureRecognizer:gesture];
+
+    }
     
-    mine = [[MineViewController alloc] init];
-    [self.view addSubview:mine.view];
-    
-    [self.view bringSubviewToFront:home.view];
-    
-    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(popPininterestMenu:)];
-    gesture.delegate = self;
-    [self.view addGestureRecognizer:gesture];
 }
 
 

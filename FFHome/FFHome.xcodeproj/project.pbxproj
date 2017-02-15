@@ -61,6 +61,7 @@
 		AC3249881E51AFDA001436CF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32497A1E51AFDA001436CF /* View+MASAdditions.m */; };
 		AC3249891E51AFDA001436CF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32497D1E51AFDA001436CF /* ViewController+MASAdditions.m */; };
 		AC32498A1E51AFDA001436CF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AC32497E1E51AFDA001436CF /* README.md */; };
+		AC42DC071E54022D006060BE /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC42DC061E54022C006060BE /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		AC32497C1E51AFDA001436CF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		AC32497D1E51AFDA001436CF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		AC32497E1E51AFDA001436CF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AC42DC061E54022C006060BE /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC42DC071E54022D006060BE /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +227,7 @@
 				AB73ECED1E506B0C00E3162D /* FFHomeTests */,
 				AB73ECF81E506B0C00E3162D /* FFHomeUITests */,
 				AB73ECCF1E506B0C00E3162D /* Products */,
+				AC42DC051E54022C006060BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -516,6 +520,14 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		AC42DC051E54022C006060BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC42DC061E54022C006060BE /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -583,6 +595,7 @@
 				TargetAttributes = {
 					AB73ECCD1E506B0C00E3162D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FP92UTUVR9;
 						ProvisioningStyle = Automatic;
 					};
 					AB73ECE91E506B0C00E3162D = {
@@ -844,8 +857,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FP92UTUVR9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FFHome/LFDefine.h";
 				INFOPLIST_FILE = FFHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ff.FFHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -856,8 +871,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FP92UTUVR9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FFHome/LFDefine.h";
 				INFOPLIST_FILE = FFHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ff.FFHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -25,13 +25,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    
-    
-    
     _bgScroll = [[UIScrollView alloc] init];
     _bgScroll.contentSize = CGSizeMake(0, SCREEN_HEIGHT * 2);
     _bgScroll.backgroundColor = COLOR(239, 239, 239);
     [self.view addSubview:_bgScroll];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [_bgScroll addGestureRecognizer:tap];
     
     [_bgScroll mas_makeConstraints:^(MASConstraintMaker *make) {
         //
@@ -42,6 +42,11 @@
     [self initNavView];
     [self initWithUILabel];
     [self initWithUITextField];
+}
+
+- (void)hideKeyboard
+{
+    [self.view endEditing:YES];
 }
 
 - (void)initNavView

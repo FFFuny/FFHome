@@ -10,6 +10,11 @@
 #import "ViewController.h"
 
 @interface AppDelegate ()
+{
+    UIImageView *_image;
+    NSDate *_startDate;
+    NSDate *_endDate;
+}
 
 @end
 
@@ -25,6 +30,8 @@
     [self.window setRootViewController:view];
     [self.window makeKeyAndVisible];
 
+    
+    [NSThread sleepForTimeInterval:2.0];
     return YES;
 }
 
@@ -38,13 +45,47 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    NSLog(@"进入APP后台");
+    _startDate = [NSDate date];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    NSLog(@"进入APP");
+    
+    _image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _image.image = [UIImage imageNamed:@"launchImage"];
+    
+    _endDate = [NSDate date];
+    NSInteger seconds = [self calculateSeconds];
+    if (seconds > 300) {
+        
+        [self.window addSubview:_image];
+        [self performSelector:@selector(hideImage) withObject:nil afterDelay:2.0];
+    }
+
 }
 
+- (void)hideImage
+{
+    if (_image) {
+        
+        [_image removeFromSuperview];
+    }
+}
+
+- (NSInteger)calculateSeconds
+{
+    NSInteger seconds = [_endDate timeIntervalSinceDate:_startDate];
+    if (seconds > 0) {
+        
+        return seconds % (3600 * 24) % 3600 % 60;
+    }
+    return 0;
+}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
