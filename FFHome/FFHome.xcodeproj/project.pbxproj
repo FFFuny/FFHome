@@ -62,6 +62,7 @@
 		AC3249891E51AFDA001436CF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32497D1E51AFDA001436CF /* ViewController+MASAdditions.m */; };
 		AC32498A1E51AFDA001436CF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AC32497E1E51AFDA001436CF /* README.md */; };
 		AC42DC071E54022D006060BE /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC42DC061E54022C006060BE /* LocalAuthentication.framework */; };
+		AC42DC0F1E557B2E006060BE /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC42DC0D1E557B2D006060BE /* MediaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,8 @@
 		AC32497D1E51AFDA001436CF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		AC32497E1E51AFDA001436CF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC42DC061E54022C006060BE /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		AC42DC0C1E557B2D006060BE /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		AC42DC0D1E557B2D006060BE /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +292,7 @@
 		AB73ED071E506B8D00E3162D /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				AC42DC081E557B11006060BE /* Media */,
 				AB73ED621E506BD500E3162D /* First */,
 				AB73ED661E506BD500E3162D /* Mine */,
 				AB73ED081E506B8D00E3162D /* Third */,
@@ -528,6 +532,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC42DC081E557B11006060BE /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				AC42DC091E557B11006060BE /* C */,
+				AC42DC0A1E557B11006060BE /* M */,
+				AC42DC0B1E557B11006060BE /* V */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		AC42DC091E557B11006060BE /* C */ = {
+			isa = PBXGroup;
+			children = (
+				AC42DC0C1E557B2D006060BE /* MediaViewController.h */,
+				AC42DC0D1E557B2D006060BE /* MediaViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		AC42DC0A1E557B11006060BE /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		AC42DC0B1E557B11006060BE /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -675,6 +712,7 @@
 				AB73ED531E506B8D00E3162D /* UIButton+AFNetworking.m in Sources */,
 				AC3249851E51AFDA001436CF /* MASViewConstraint.m in Sources */,
 				AB73ED5F1E506B8D00E3162D /* UIView+MJExtension.m in Sources */,
+				AC42DC0F1E557B2E006060BE /* MediaViewController.m in Sources */,
 				AB73ED561E506B8D00E3162D /* UIRefreshControl+AFNetworking.m in Sources */,
 				AB73ED521E506B8D00E3162D /* UIAlertView+AFNetworking.m in Sources */,
 				AB73ED611E506B8D00E3162D /* PininterestLikeMenuItem.m in Sources */,
