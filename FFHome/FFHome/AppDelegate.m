@@ -24,6 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.isHalfScreen = YES;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     ViewController *view = [[ViewController alloc] init];
@@ -98,6 +100,27 @@
     [self saveContext];
 }
 
+//- (BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
+
+//-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    if (self.isHalfScreen) { // yes竖屏
+//        return UIInterfaceOrientationMaskPortrait;
+//    }else{
+//        return UIInterfaceOrientationMaskLandscape; //否者只支持横屏
+//    }
+//    
+//}
+
+// 设置屏幕是否可以旋转
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if (!self.isHalfScreen) {
+        return UIInterfaceOrientationMaskAll;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 #pragma mark - Core Data stack
 

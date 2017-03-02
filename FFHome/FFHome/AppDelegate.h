@@ -12,6 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (assign, nonatomic) BOOL isHalfScreen;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
