@@ -51,6 +51,7 @@
 		AB73ED791E506F2A00E3162D /* center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB73ED751E506F2A00E3162D /* center@2x.png */; };
 		AC1EE38B1E568B8900756416 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1EE38A1E568B8900756416 /* MovieViewController.m */; };
 		AC1EE38D1E568BD400756416 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1EE38C1E568BD400756416 /* MediaPlayer.framework */; };
+		AC3176601E77CC690080E8AC /* FFLoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AC31765F1E77CC690080E8AC /* FFLoding.m */; };
 		AC32497F1E51AFDA001436CF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AC3249631E51AFDA001436CF /* LICENSE */; };
 		AC3249801E51AFDA001436CF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3249661E51AFDA001436CF /* MASCompositeConstraint.m */; };
 		AC3249811E51AFDA001436CF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3249691E51AFDA001436CF /* MASConstraint.m */; };
@@ -65,6 +66,7 @@
 		AC32498A1E51AFDA001436CF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AC32497E1E51AFDA001436CF /* README.md */; };
 		AC42DC071E54022D006060BE /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC42DC061E54022C006060BE /* LocalAuthentication.framework */; };
 		AC42DC0F1E557B2E006060BE /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC42DC0D1E557B2D006060BE /* MediaViewController.m */; };
+		AC5FAA051E69078900716051 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5FAA041E69078900716051 /* LaunchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		AC1EE3891E568B8900756416 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		AC1EE38A1E568B8900756416 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		AC1EE38C1E568BD400756416 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		AC31765E1E77CC690080E8AC /* FFLoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLoding.h; sourceTree = "<group>"; };
+		AC31765F1E77CC690080E8AC /* FFLoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLoding.m; sourceTree = "<group>"; };
 		AC3249631E51AFDA001436CF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AC3249651E51AFDA001436CF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		AC3249661E51AFDA001436CF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 		AC42DC061E54022C006060BE /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		AC42DC0C1E557B2D006060BE /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
 		AC42DC0D1E557B2D006060BE /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
+		AC5FAA031E69078900716051 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		AC5FAA041E69078900716051 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +264,8 @@
 				AB73ECD51E506B0C00E3162D /* AppDelegate.m */,
 				AB73ECD71E506B0C00E3162D /* ViewController.h */,
 				AB73ECD81E506B0C00E3162D /* ViewController.m */,
+				AC5FAA031E69078900716051 /* LaunchViewController.h */,
+				AC5FAA041E69078900716051 /* LaunchViewController.m */,
 				AB73ED711E506CF900E3162D /* LFDefine.h */,
 				AB73ECDA1E506B0C00E3162D /* Main.storyboard */,
 				AB73ECE01E506B0C00E3162D /* Assets.xcassets */,
@@ -309,6 +317,7 @@
 		AB73ED081E506B8D00E3162D /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				AC31765D1E77CC330080E8AC /* Other */,
 				AC3249621E51AFDA001436CF /* Masonry */,
 				AB73ED091E506B8D00E3162D /* AF */,
 				AB73ED301E506B8D00E3162D /* MJRefresh */,
@@ -486,6 +495,15 @@
 			children = (
 			);
 			path = V;
+			sourceTree = "<group>";
+		};
+		AC31765D1E77CC330080E8AC /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AC31765E1E77CC690080E8AC /* FFLoding.h */,
+				AC31765F1E77CC690080E8AC /* FFLoding.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		AC3249621E51AFDA001436CF /* Masonry */ = {
@@ -717,6 +735,7 @@
 				AB73ED5B1E506B8D00E3162D /* MJRefreshFooterView.m in Sources */,
 				AC1EE38B1E568B8900756416 /* MovieViewController.m in Sources */,
 				AB73ED551E506B8D00E3162D /* UIProgressView+AFNetworking.m in Sources */,
+				AC5FAA051E69078900716051 /* LaunchViewController.m in Sources */,
 				AC3249861E51AFDA001436CF /* NSArray+MASAdditions.m in Sources */,
 				AC3249881E51AFDA001436CF /* View+MASAdditions.m in Sources */,
 				AB73ED531E506B8D00E3162D /* UIButton+AFNetworking.m in Sources */,
@@ -751,6 +770,7 @@
 				AB73ED6F1E506C3100E3162D /* MineViewController.m in Sources */,
 				AC3249891E51AFDA001436CF /* ViewController+MASAdditions.m in Sources */,
 				AB73ED491E506B8D00E3162D /* AFHTTPSessionManager.m in Sources */,
+				AC3176601E77CC690080E8AC /* FFLoding.m in Sources */,
 				AB73ED4A1E506B8D00E3162D /* AFNetworkReachabilityManager.m in Sources */,
 				AB73ED4E1E506B8D00E3162D /* AFURLResponseSerialization.m in Sources */,
 				AB73ED571E506B8D00E3162D /* UIWebView+AFNetworking.m in Sources */,

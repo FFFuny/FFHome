@@ -70,10 +70,10 @@
     bgView.backgroundColor = [UIColor blackColor];
     
     // 创建AVPlayer
-    NSURL *sourceMovieUrl = [NSURL fileURLWithPath:@"/Users/jianxin/Downloads/11111.mp4"];
-    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:sourceMovieUrl options:nil];
-    self.playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
-//    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"http://v.jxvdy.com/sendfile/w5bgP3A8JgiQQo5l0hvoNGE2H16WbN09X-ONHPq3P3C1BISgf7C-qVs6_c8oaw3zKScO78I--b0BGFBRxlpw13sf2e54QA"]];
+//    NSURL *sourceMovieUrl = [NSURL fileURLWithPath:@"/Users/jianxin/Downloads/11111.mp4"];
+//    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:sourceMovieUrl options:nil];
+//    self.playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"http://v.jxvdy.com/sendfile/w5bgP3A8JgiQQo5l0hvoNGE2H16WbN09X-ONHPq3P3C1BISgf7C-qVs6_c8oaw3zKScO78I--b0BGFBRxlpw13sf2e54QA"]];
     self.player = [AVPlayer playerWithPlayerItem:_playerItem];
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
     self.playerLayer.frame = CGRectMake(0, 20, _width, _width/4*3);
