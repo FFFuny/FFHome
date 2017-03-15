@@ -13,6 +13,8 @@
 {
     NSMutableArray *_contentList;
     UITableView *_menuTable;
+    UIView *_navView;
+
 }
 
 @end
@@ -31,15 +33,47 @@
                     @"加载提示",
                     nil];
     
+    [self initNavView];
     [self initTable];
+}
+
+- (void)initNavView
+{
+    _navView = [[UIView alloc] init];
+    _navView.backgroundColor = COLOR(239, 239, 239);
+    [self.view addSubview:_navView];
+    
+    UILabel *navTitle = [[UILabel alloc] init];
+    navTitle.text = NSLocalizedString(@"media_title", nil);
+    navTitle.font = Font(12);
+    navTitle.textColor = [UIColor blackColor];
+    navTitle.textAlignment = NSTextAlignmentCenter;
+    [_navView addSubview:navTitle];
+    
+    [_navView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //
+        make.top.mas_equalTo(0);
+        make.left.equalTo(self.view.mas_left);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.mas_equalTo(64);
+    }];
+    
+    [navTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        //
+        make.top.equalTo(_navView.mas_top).offset(20);
+        make.left.equalTo(self.view.mas_left).offset(SCREEN_WIDTH / 3);
+        make.width.mas_equalTo(SCREEN_WIDTH / 3);
+        make.height.mas_equalTo(44);
+    }];
 }
 
 #pragma mark - 目录
 - (void)initTable
 {
-    _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20) style:UITableViewStylePlain];
+    _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
     _menuTable.delegate = self;
     _menuTable.dataSource = self;
+    _menuTable.tableFooterView = [UIView new];
     [self.view addSubview:_menuTable];
 }
 
@@ -106,14 +140,14 @@
 #pragma mark - 加载中动画...
 - (void)ffLoading
 {
-    [FFLoding showLodingInView:self.view];
+    [FFLoding showLodingInView:_menuTable];
     [self performSelector:@selector(hideFF) withObject:nil afterDelay:3.0f];
 }
 
 #pragma mark - 隐藏加载动画
 - (void)hideFF
 {
-    [FFLoding hideLodingInView:self.view];
+    [FFLoding hideLodingInView:_menuTable];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -56,7 +56,7 @@
     [self.view addSubview:_navView];
     
     UILabel *navTitle = [[UILabel alloc] init];
-    navTitle.text = @"控件";
+    navTitle.text = NSLocalizedString(@"home_title", nil);
     navTitle.font = Font(12);
     navTitle.textColor = [UIColor blackColor];
     navTitle.textAlignment = NSTextAlignmentCenter;

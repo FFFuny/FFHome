@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  FFHome
+
+  Created by 建新 on 17/3/15.
+  Copyright © 2017年 ff. All rights reserved.
+*/
+
+// Localizable App Name是App在English环境下显示的名称
+CFBundleDisplayName = "FFHome";

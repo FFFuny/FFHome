@@ -26,7 +26,10 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor greenColor];
     
-    _titleArray = [NSMutableArray arrayWithObjects:@"指纹解锁", nil];
+    _titleArray = [NSMutableArray arrayWithObjects:
+                   @"指纹解锁",
+                   @"多语言",
+                   nil];
     _switchView = [[UISwitch alloc] init];
 
     [self initTableview];
@@ -87,6 +90,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 1) {
+        
+        
+    }
 }
 
 - (void)onOrOff:(UISwitch *)sender
